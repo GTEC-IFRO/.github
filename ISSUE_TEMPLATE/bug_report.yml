@@ -1,1 +1,44 @@
-
+name: "🐛 Reporte de Bug"
+description: "Informe um comportamento inesperado ou erro em um dos sistemas."
+title: "[BUG]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por ajudar a melhorar nossos sistemas! Preencha as seções abaixo com o máximo de detalhes possível.
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição do Problema
+      description: Explique de forma clara o que aconteceu de errado.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passos para Reproduzir
+      description: Sequência numérica necessária para reproduzir a falha.
+      placeholder: |
+        1. Acesse o endpoint / rota '...'
+        2. Execute a ação '...'
+        3. Observe o erro retornado
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severidade do Impacto
+      options:
+        - "Crítica (Serviço fora do ar / impede o fluxo principal)"
+        - "Alta (Impacta operação, mas existe fluxo alternativo temporário)"
+        - "Média (Falha pontual ou de regra de negócio específica)"
+        - "Baixa (Ajuste visual ou cosmético)"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs e Mensagens de Erro
+      description: Cole aqui logs do terminal, stack traces ou saídas de console relevantes.
+      render: shell
