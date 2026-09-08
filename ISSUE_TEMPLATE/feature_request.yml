@@ -1,1 +1,26 @@
-
+name: "💡 Sugestão de Funcionalidade"
+description: "Proponha uma nova funcionalidade, automação ou melhoria técnica."
+title: "[FEATURE]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Motivação e Contexto
+      description: Qual problema essa funcionalidade resolve ou que valor ela traz para o time?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Comportamento Esperado
+      description: Descreva detalhadamente como a funcionalidade deve operar na prática.
+    validations:
+      required: true
+  - type: checkboxes
+    id: verification
+    attributes:
+      label: Verificações
+      options:
+        - label: "Confirmei que não existe uma issue aberta para este mesmo recurso."
+          required: true
